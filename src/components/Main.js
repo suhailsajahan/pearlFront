@@ -17,15 +17,15 @@ const Main = () => {
       {/* <Header/> */}
       <AuthProvider>
         <Switch>
-          <Route exact path="/home" component={HomePage} />
+          {/* <PrivateRoute exact path="/home" component={HomePage} />
           <PrivateRoute exact path="/managecards" component={ManageCards} />
-          <PrivateRoute exact path="/manageusers" component={ManageUsers} />
-          {/* <Route exact path="/home" component={HomePage}/>
-                        <Route exact path="/managecards" component={ManageCards}/>
-                        <Route exact path="/manageusers" component={ManageUsers}/> */}
+          <PrivateRoute exact path="/manageusers" component={ManageUsers} /> */}
+          <Route exact path="/home" component={HomePage} />
+          <Route exact path="/managecards" component={ManageCards} />
+          <Route exact path="/manageusers" component={ManageUsers} />
           {/* <PrivateRoute exact path="/manageusers/:userId" component={ManageUsers}/> */}
           <Route path="/login" component={LoginPage} />
-          <PrivateRoute path="/signup" component={Signup} />
+          <Route path="/signup" component={Signup} />
           <Route exact path="/forgot-password" component={ForgotPassword} />
           <Redirect to="/login" />
         </Switch>
