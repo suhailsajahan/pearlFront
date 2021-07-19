@@ -22,6 +22,8 @@ function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [users, setUsers] = useState([]);
   const [cards, setCards] = useState([]);
+  const [cardLoaded, setCardLoaded] = useState(true);
+  const [userLoaded, setUserLoaded] = useState(true);
 
   //Retrieve users & cards
   useEffect(() => {
@@ -30,7 +32,8 @@ function HomePage() {
       .then((response) => {
         // console.log(response.data[0]);
         setUsers(response.data);
-        setIsLoading(false);
+        setUserLoaded(false);
+        setIsLoading(userLoaded||cardLoaded);
       })
       .catch(() => {
         console.log("Error");
@@ -39,7 +42,8 @@ function HomePage() {
       .get("/cards")
       .then((response) => {
         setCards(response.data);
-        setIsLoading(false);
+        setCardLoaded(false);
+        setIsLoading(userLoaded || cardLoaded);
       })
       .catch(() => {
         console.log("Error");
