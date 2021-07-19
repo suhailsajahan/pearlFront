@@ -20,14 +20,36 @@ const Main = () => {
           {/* <PrivateRoute exact path="/home" component={HomePage} />
           <PrivateRoute exact path="/managecards" component={ManageCards} />
           <PrivateRoute exact path="/manageusers" component={ManageUsers} /> */}
-          <Route exact path="/home" component={HomePage} />
-          <Route exact path="/managecards" component={ManageCards} />
-          <Route exact path="/manageusers" component={ManageUsers} />
+          <Route
+            exact
+            path="https://modest-allen-78ed87.netlify.app/home"
+            component={HomePage}
+          />
+          <Route
+            exact
+            path="https://modest-allen-78ed87.netlify.app/managecards"
+            component={ManageCards}
+          />
+          <Route
+            exact
+            path="https://modest-allen-78ed87.netlify.app/manageusers"
+            component={ManageUsers}
+          />
           {/* <PrivateRoute exact path="/manageusers/:userId" component={ManageUsers}/> */}
-          <Route path="/login" component={LoginPage} />
-          <Route path="/signup" component={Signup} />
-          <Route exact path="/forgot-password" component={ForgotPassword} />
-          <Redirect to="/login" />
+          <Route
+            path="https://modest-allen-78ed87.netlify.app/login"
+            component={LoginPage}
+          />
+          <Route
+            path="https://modest-allen-78ed87.netlify.app/signup"
+            component={Signup}
+          />
+          <Route
+            exact
+            path="https://modest-allen-78ed87.netlify.app/forgot-password"
+            component={ForgotPassword}
+          />
+          <Redirect to="https://modest-allen-78ed87.netlify.app/login" />
         </Switch>
       </AuthProvider>
       {/* <Footer/> */}

@@ -43,7 +43,7 @@ const Header = () => {
       await api.get("/admins/logout");
       await getLoggedIn();
       setCurrentUser(null);
-      history.push("/login");
+      history.push("https://modest-allen-78ed87.netlify.app/login");
     } catch {
       setError("Logout Failed");
       alert(error);
@@ -63,24 +63,36 @@ const Header = () => {
         <div className="container">
           <NavbarToggler onClick={toggleNav} />{" "}
           {/*A button shown at the small screens, which will help to find the nav bar items */}
-          <NavbarBrand className="mr-5 font-italic" href="/home">
+          <NavbarBrand
+            className="mr-5 font-italic"
+            href="https://modest-allen-78ed87.netlify.app/home"
+          >
             The Pearl
           </NavbarBrand>
           <Collapse isOpen={isNavOpen} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink className="nav-link" to="/home">
+                <NavLink
+                  className="nav-link"
+                  to="https://modest-allen-78ed87.netlify.app/home"
+                >
                   <span className="fa fa-home fa-lg"></span> Home
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/managecards">
+                <NavLink
+                  className="nav-link"
+                  to="https://modest-allen-78ed87.netlify.app/managecards"
+                >
                   <span className="fa fa-address-card fa-lg"></span> Manage
                   Cards
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/manageusers">
+                <NavLink
+                  className="nav-link"
+                  to="https://modest-allen-78ed87.netlify.app/manageusers"
+                >
                   <span className="fa fa-users fa-lg"></span> Manage Users
                 </NavLink>
               </NavItem>
@@ -96,7 +108,13 @@ const Header = () => {
                   <span className="fa fa-user fa-lg"> {currentUser}</span>
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem onClick={() => history.push("/signup")}>
+                  <DropdownItem
+                    onClick={() =>
+                      history.push(
+                        "https://modest-allen-78ed87.netlify.app/signup"
+                      )
+                    }
+                  >
                     <span className="fa fa-cog fa-lg">
                       {" "}
                       Create a new account
