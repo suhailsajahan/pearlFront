@@ -87,7 +87,7 @@ const ManageCards = () => {
       setFilteredCards(filteredCards.filter((fcard) => fcard.id !== id));
     });
     toggleDeleteModal();
-    window.location.reload();
+    // window.location.reload();
   };
 
   // Filter Cards

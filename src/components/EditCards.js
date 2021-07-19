@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FileBase64 from "react-file-base64";
+import { useHistory } from "react-router-dom";
 import {
   Form,
   FormGroup,
@@ -20,7 +21,8 @@ const EditCards = ({ onEdit, card }) => {
   const [image, setImage] = useState(card.image);
   const [price, setPrice] = useState(card.price);
   const [isModalOpen, set_isModalOpen] = useState(false);
-
+  const history = useHistory();
+  
   const toggleModal = () => {
     set_isModalOpen(!isModalOpen);
   };
@@ -47,7 +49,7 @@ const EditCards = ({ onEdit, card }) => {
 
   //Submit
   const onSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
 
     if (!name || !description || !image || !price) {
       alert("Please fill the all parts");
@@ -63,6 +65,7 @@ const EditCards = ({ onEdit, card }) => {
     setPrice("");
 
     toggleModal();
+    history.push("/managecards");
   };
 
   return (

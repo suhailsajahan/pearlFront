@@ -16,6 +16,7 @@ import {
 import Header from "./Header";
 import api from "../api/api";
 import ReactPaginate from "react-paginate";
+import { useHistory } from "react-router-dom";
 
 const ManageUsers = () => {
   const [users, setUsers] = useState([]);
@@ -27,6 +28,7 @@ const ManageUsers = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(0);
   const [deleteUserId, setDeleteUserId] = useState();
+  const history = useHistory();
 
   const usersPerPage = 7;
   const usersVisited = pageNumber * usersPerPage;
@@ -64,7 +66,7 @@ const ManageUsers = () => {
 
   // Submit
   const onSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
 
     if (!tempUser.name || !tempUser.description || !tempUser.email) {
       alert("Please fill the all parts");
@@ -83,6 +85,7 @@ const ManageUsers = () => {
     // setDescription('');
 
     toggleModal();
+    history.push("/manageusers");
   };
 
   //Delete user
@@ -92,7 +95,7 @@ const ManageUsers = () => {
       setSearchedUsers(searchedUsers.filter((fuser) => fuser.id !== id));
     });
     toggleDeleteModal();
-    window.location.reload();
+    // window.location.reload();
     // setSearchedUsers(searchedUsers.filter((fuser) => fuser.id !== id));
   };
   // console.log(users)
