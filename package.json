@@ -23,6 +23,7 @@
     "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
+  "homepage": "https://modest-allen-78ed87.netlify.app",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

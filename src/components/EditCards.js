@@ -47,7 +47,7 @@ const EditCards = ({ onEdit, card }) => {
 
   //Submit
   const onSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
 
     if (!name || !description || !image || !price) {
       alert("Please fill the all parts");
