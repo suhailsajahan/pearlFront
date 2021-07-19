@@ -65,7 +65,7 @@ const EditCards = ({ onEdit, card }) => {
     setPrice("");
 
     toggleModal();
-    history.push("/managecards");
+    history.push("/home");
   };
 
   return (

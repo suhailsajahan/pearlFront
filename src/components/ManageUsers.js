@@ -85,7 +85,7 @@ const ManageUsers = () => {
     // setDescription('');
 
     toggleModal();
-    history.push("/manageusers");
+    history.push("/home");
   };
 
   //Delete user
@@ -95,6 +95,7 @@ const ManageUsers = () => {
       setSearchedUsers(searchedUsers.filter((fuser) => fuser.id !== id));
     });
     toggleDeleteModal();
+    history.push("/home");
     // window.location.reload();
     // setSearchedUsers(searchedUsers.filter((fuser) => fuser.id !== id));
   };

@@ -22,7 +22,7 @@ import AddCards from "./AddCards";
 import EditCards from "./EditCards";
 import ReactPaginate from "react-paginate";
 import "../App.css";
-// import {useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 const ManageCards = () => {
   const [cards, setCards] = useState([]);
@@ -30,7 +30,7 @@ const ManageCards = () => {
   const [searchedCards, setSearchedCards] = useState([]);
   const [filteredCards, setFilteredCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const history = useHistory()
+  const history = useHistory()
   const [isDeleteModalOpen, set_isDeleteModalOpen] = useState(false);
   const [deleteCardId, setDeleteCardId] = useState();
   const [pageNumber, setPageNumber] = useState(0);
@@ -88,6 +88,7 @@ const ManageCards = () => {
     });
     toggleDeleteModal();
     // window.location.reload();
+    history.push("/home");
   };
 
   // Filter Cards
